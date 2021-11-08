@@ -13,4 +13,17 @@ class EmployeePayrollTest {
 	        long entries = employeePayrollService.countEntries();
 	        assertEquals(3, entries);
 	    }
+	 
+	    @Test
+	    public void given3EmployeesWhenWrittenToFileShouldPrintEmployeeEntries()
+	    {
+	        EmployeePayrollTwo employeePayrollService = new EmployeePayrollTwo();
+	        employeePayrollService.addEmployee(new EmployeeData(1,"Jeff Bezos",10000));
+	        employeePayrollService.addEmployee(new EmployeeData(2,"Bill Gates",20000));
+	        employeePayrollService.addEmployee(new EmployeeData(3,"Mark Z",30000));
+	        employeePayrollService.writeEmployeeDataToFile();
+	        employeePayrollService.printData();
+	        long entries = employeePayrollService.countEntries();
+	        assertEquals(3, entries);
+	    }
 }
