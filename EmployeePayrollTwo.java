@@ -79,6 +79,16 @@ public class EmployeePayrollTwo {
             e.printStackTrace();
         }
     }
+    
+    public long readDataFromFile() {
+        try {
+            String data = Files.readString(Paths.get(FILE_PATH));
+            System.out.println(data);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return countEntries();
+    }
 }
 
 
